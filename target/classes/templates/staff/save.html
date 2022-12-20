@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Save Staff</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant</h1>
+        <hr>
+        <h3>Staff</h3>
+        <hr>
+        <p class="h4 mb-4">Save Staff</p>
+        <form action="#" th:action="@{/staff/save}"
+              th:object="${staff}" method="POST">
+            <!-- Add hidden form field to handle update -->
+            <input type="hidden" th:field="*{id}" />
+            <div class="form-inline">
+                <input type="text" th:field="*{first_name}"
+                       class="form-control mb-4 col-4" placeholder="Name">
+                <span th:if="${#fields.hasErrors('first_name')}"
+                      th:errors="*{first_name}"
+                      class="badge badge-danger ml-2 mb-4"></span>
+            </div>
+            <div class="form-inline">
+                <input type="text" th:field="*{last_name}"
+                       class="form-control mb-4 col-4" placeholder="Surname">
+                <span th:if="${#fields.hasErrors('last_name')}"
+                      th:errors="*{last_name}"
+                      class="badge badge-danger ml-2 mb-4"></span>
+            </div>
+            <div class="form-inline">
+                <input type="text" th:field="*{passport}"
+                       class="form-control mb-4 col-4" placeholder="Passport">
+                <span th:if="${#fields.hasErrors('passport')}"
+                      th:errors="*{passport}"
+                      class="badge badge-danger ml-2 mb-4"></span>
+            </div>
+            <div class="form-inline">
+                <input type="text" th:field="*{job}"
+                       class="form-control mb-4 col-4" placeholder="Job">
+                <span th:if="${#fields.hasErrors('job')}"
+                      th:errors="*{job}"
+                      class="badge badge-danger ml-2 mb-4"></span>
+            </div>
+            <button type="submit" class="btn btn-info col-2">Save</button>
+        </form>
+        <hr>
+        <a th:href="@{/staff/list}">Back to Staff list</a>
+    </div>
+</body>

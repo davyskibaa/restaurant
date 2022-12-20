@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Restaurant</h1>
+    <hr>
+    <h3>Admin Page</h3>
+    <hr>
+
+    <!-- Add a button -->
+    <a th:href="@{/booking/list}"
+       class="btn btn-primary btn-lg mb-3" style="width:49.5%; height:150px">
+        Bookings
+    </a>
+    <a th:href="@{/client/list}"
+       class="btn btn-primary btn-lg mb-3" style="width:49.5%; height:150px">
+        Clients
+    </a>
+    <a th:href="@{/order/list}"
+       class="btn btn-primary btn-lg mb-3" style="width:33%; height:150px">
+        Orders
+    </a>
+    <a th:href="@{/menu/list}"
+       class="btn btn-primary btn-lg mb-3" style="width:33%; height:150px">
+        Menu
+    </a>
+    <a th:href="@{/staff/list}"
+       class="btn btn-primary btn-lg mb-3" style="width:33%; height:150px">
+        Staff
+    </a>
+    <hr>
+
+
+</div>
+
+</body>
+</html>
